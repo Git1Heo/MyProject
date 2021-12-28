@@ -4,5 +4,9 @@
 <configuration>
 	<typeAliases> 
 		<typeAlias alias="member" type="com.project.personalityboard.dto.MemberDTO"/>
+		<typeAlias alias="board" type="com.project.personalityboard.dto.BoardDTO"/>
+		<typeAlias alias="search" type="com.project.personalityboard.dto.SearchPageDTO"/>
+		<typeAlias alias="comment" type="com.project.personalityboard.dto.CommentDTO"/>
+		
 	</typeAliases>
 </configuration>

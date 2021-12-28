@@ -53,29 +53,20 @@ public class IndexController {
 	
 	//로그인 처리
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public  String login(Model model,@ModelAttribute MemberDTO member) {		
-		
+	public  @ResponseBody String login(Model model,@ModelAttribute MemberDTO member) {		
 		MemberDTO result=ms.login(member);
 		model.addAttribute("member", result);
 		if(result == null)	{
-//			String alert="<script>alert('Login Fail');location.href='/'</script>";
-//			return alert; 
-			loginfail();
-			
-			return "index";
+			String alert="<script>alert('Login Fail');location.href='/'</script>";
+			return alert; 
 		}
 		else {
 			session.setAttribute("loginID", member.getM_id());
 			session.setAttribute("loginPW", member.getM_password());
 			String alert="<script>alert('Login Success');location.href='/'</script>";
-			return "index";
+			return alert;
 		}
 	}
-	public String loginfail() {
-		String alert="<script>alert('Login Fail');</script>";
-		return alert;
-	}
-	
 	
 	//로그아웃 처리
 	@RequestMapping (value="/logout", method=RequestMethod.GET)
@@ -106,6 +97,8 @@ public class IndexController {
 		MemberDTO member =ms.mypage(m_id);
 		model.addAttribute("member", member);
         return "mypage";
+        
 	}
 	
+
 }

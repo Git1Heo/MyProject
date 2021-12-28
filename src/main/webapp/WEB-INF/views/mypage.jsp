@@ -10,7 +10,12 @@
 ${member.m_id}
 ${member.m_password}
 ${member.m_mail}
-${member.m_id}
+${member.m_name}
+${member.m_phone}
+${member.m_mbti}
+${member.m_profile}
+수정처리
+
 
 </body>
 </html>

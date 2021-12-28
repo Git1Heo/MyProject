@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="Board"> 
+ 	<insert id="write" parameterType="board">
+ 		insert into board_table(b_contents, b_title, b_writer, b_hits, b_date,b_mbti,b_profile) 
+ 			values(#{b_contents},#{b_title},#{b_writer},0,now(),#{b_mbti},#{b_profile})
+ 	</insert>
+ 	
+ 	<select id="allList" resultType="board">
+		select * from board_table
+ 	</select>
+ 	
+ 	<select id="boardView" parameterType="long" resultType="board">
+		select * from board_table where b_number=#{b_number}
+ 	</select>
+ 	
+	 <select id="commentView" parameterType="long" resultType="comment">
+		select * from comment_table where b_number=#{b_number}
+ 	</select>
+ 	
+ 	<select id="memberInfo" parameterType="String" resultType="member">
+		select * from member_table where m_id=#{m_id}
+ 	</select>
+ 	
+ 	<!-- 게시글 삭제 -->
+ 	<delete id="boardDelete" parameterType="long" >
+ 		 delete from board_table where b_number=#{b_number}
+ 	</delete>
+ 	
+ 	<!-- 게시글 수정 처리 -->
+ 	<select id="update" parameterType="board" >
+		update board_table set b_contents=#{b_contents},b_title=#{b_title},b_mbti=#{b_mbti},b_profile=#{b_profile},b_date=now() where b_number=#{b_number}
+	</select>
+	
+	<!-- 페이징 -->
+	<select id="pagingList1" parameterType="java.util.HashMap" resultType="board">
+		select * from board_table order by b_number desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(b_number) from board_table
+	</select>
+	
+	<!-- 검색 페이징 -->
+  	<select id="Pagingsearch" parameterType="search" resultType="board">
+		select * from board_table where ${type} like CONCAT('%', #{word}, '%') order by b_number desc limit #{start}, #{limit}
+	</select>  
+	
+
+	<select id="SearchPaingCount" resultType="int" parameterType="java.util.HashMap">
+		select count(b_number) from board_table where ${type} like CONCAT('%', #{word}, '%')
+	</select>
+	
+
+	
+ </mapper>

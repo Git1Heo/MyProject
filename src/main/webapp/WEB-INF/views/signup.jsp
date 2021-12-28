@@ -134,7 +134,8 @@
                     <h4 class="mb-2">전화번호</h4>        
                     <input type="text" name="m_phone" class="form-control" id="pn" onblur="pncheck()" placeholder="OOO-OOOO-OOO 형식으로 전화번호를 입력하세요" style="width: 100% ;">
                     <p id="phone-check-result"></p>
-                </div>			
+                </div>	
+	
                   <button class="btn btn btn-primary btn-round mb-4" style="width: 100%" id="endButton">회원가입</button> 
              </div>
     		</form>
@@ -142,5 +143,7 @@
 
 
     </div>
+    
+    값 알맞을때만 회원가입 되도록 자바스크립트
 </body>
 </html>

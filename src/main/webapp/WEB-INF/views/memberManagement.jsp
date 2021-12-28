@@ -52,7 +52,7 @@
       </c:if>
       
        <c:if test="${!empty sessionScope.loginID }">
-        <a style="float: right;" class="m-2 " >mypage</a> 
+        <a href="/mypage?m_id=${sessionScope.loginID}" style="float: right;" class="m-2 " >mypage</a> 
        </c:if> 
       </div>
 

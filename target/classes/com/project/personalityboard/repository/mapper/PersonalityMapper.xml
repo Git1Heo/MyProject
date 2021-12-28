@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="Personality">
+ 	<select id="update" parameterType="member" >
+		update member_table set m_mbti=#{m_mbti},m_profile=#{m_profile}
+		where m_id=#{m_id}
+	</select>
+ </mapper>
