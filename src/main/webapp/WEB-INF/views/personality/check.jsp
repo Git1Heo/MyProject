@@ -103,41 +103,54 @@ function iiend(){
   	<div>
   	
   <div id="qna" class="mx-auto px-5 my-5">
-    <p class="mx-5">1. mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 </p>
+    <p class="mx-5">1. 외로울 때 속마음을 나눌 수 있는 친구가 있다.</p>
     <div id="ans" class="mx-auto">
-        <span style="color: rgb(51, 164, 116);">동의</span>
-        <input type="radio" class="a1"  id="0" name="1" value="1" onclick="update(this.id,event)"> 
-        <input type="radio" class="a2"  id="0" name="1" value="2" onclick="update(this.id,event)"> 
+        <span style="color: rgb(51, 164, 116);">매우그렇다</span>
+        <input type="radio" class="a1"  id="0" name="1" value="5" onclick="update(this.id,event)"> 
+        <input type="radio" class="a2"  id="0" name="1" value="4" onclick="update(this.id,event)"> 
         <input type="radio" class="a3"  id="0" name="1" value="3" onclick="update(this.id,event)"> 
-        <input type="radio" class="a4"  id="0" name="1" value="4" onclick="update(this.id,event)"> 
-        <input type="radio" class="a5"  id="0" name="1" value="5" onclick="update(this.id,event)"> 
-        <span style="color: rgb(136, 97, 154);">비동의</span>
+        <input type="radio" class="a4"  id="0" name="1" value="2" onclick="update(this.id,event)"> 
+        <input type="radio" class="a5"  id="0" name="1" value="1" onclick="update(this.id,event)"> 
+        <span style="color: rgb(136, 97, 154);">전혀아니다</span>
     </div>
   </div>
 
   <div id="qna" class="mx-auto px-5 my-5">
-    <p class="mx-5">1. mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 </p>
+    <p class="mx-5">2. 다른 사람들이 해내는 일이라면 나는 그보다 더 잘할 수 있다고 믿는다. </p>
     <div id="ans" class="mx-auto">
-        <span style="color: rgb(51, 164, 116);">동의</span>
-        <input type="radio" class="a1"  id="1" name="2" value="1" onclick="update(this.id,event)"> 
-        <input type="radio" class="a2"  id="1" name="2" value="2" onclick="update(this.id,event)"> 
+        <span style="color: rgb(51, 164, 116);">매우그렇다</span>
+        <input type="radio" class="a1"  id="1" name="2" value="5" onclick="update(this.id,event)"> 
+        <input type="radio" class="a2"  id="1" name="2" value="4" onclick="update(this.id,event)"> 
         <input type="radio" class="a3"  id="1" name="2" value="3" onclick="update(this.id,event)"> 
-        <input type="radio" class="a4"  id="1" name="2" value="4" onclick="update(this.id,event)"> 
-        <input type="radio" class="a5"  id="1" name="2" value="5" onclick="update(this.id,event)"> 
-        <span style="color: rgb(136, 97, 154);">비동의</span>
+        <input type="radio" class="a4"  id="1" name="2" value="2" onclick="update(this.id,event)"> 
+        <input type="radio" class="a5"  id="1" name="2" value="1" onclick="update(this.id,event)"> 
+        <span style="color: rgb(136, 97, 154);">전혀아니다</span>
     </div>
   </div>
 
   <div id="qna" class="mx-auto px-5 my-5">
-    <p class="mx-5">1. mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 mbti질문 </p>
+    <p class="mx-5">3. 나의 성별에 대해 불만이 없다.</p>
     <div id="ans" class="mx-auto">
-        <span style="color: rgb(51, 164, 116);">동의</span>
-        <input type="radio" class="a1"  id="2" name="3" value="1" onclick="update(this.id,event)"> 
-        <input type="radio" class="a2"  id="2" name="3" value="2" onclick="update(this.id,event)"> 
+        <span style="color: rgb(51, 164, 116);">매우그렇다</span>
+        <input type="radio" class="a1"  id="2" name="3" value="5" onclick="update(this.id,event)"> 
+        <input type="radio" class="a2"  id="2" name="3" value="4" onclick="update(this.id,event)"> 
         <input type="radio" class="a3"  id="2" name="3" value="3" onclick="update(this.id,event)"> 
-        <input type="radio" class="a4"  id="2" name="3" value="4" onclick="update(this.id,event)"> 
-        <input type="radio" class="a5"  id="2" name="3" value="5" onclick="update(this.id,event)"> 
-        <span style="color: rgb(136, 97, 154);">비동의</span>
+        <input type="radio" class="a4"  id="2" name="3" value="2" onclick="update(this.id,event)"> 
+        <input type="radio" class="a5"  id="2" name="3" value="1" onclick="update(this.id,event)"> 
+        <span style="color: rgb(136, 97, 154);">전혀아니다</span>
+    </div>
+  </div>
+  
+   <div id="qna" class="mx-auto px-5 my-5">
+    <p class="mx-5">3. 나의 성별에 대해 불만이 없다.</p>
+    <div id="ans" class="mx-auto">
+        <span style="color: rgb(51, 164, 116);">매우그렇다</span>
+        <input type="radio" class="a1"  id="2" name="4" value="5" onclick="update(this.id,event)"> 
+        <input type="radio" class="a2"  id="2" name="4" value="4" onclick="update(this.id,event)"> 
+        <input type="radio" class="a3"  id="2" name="4" value="3" onclick="update(this.id,event)"> 
+        <input type="radio" class="a4"  id="2" name="4" value="2" onclick="update(this.id,event)"> 
+        <input type="radio" class="a5"  id="2" name="4" value="1" onclick="update(this.id,event)"> 
+        <span style="color: rgb(136, 97, 154);">전혀아니다</span>
     </div>
   </div>
   	
