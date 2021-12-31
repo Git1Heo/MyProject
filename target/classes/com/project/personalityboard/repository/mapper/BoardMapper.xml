@@ -18,6 +18,10 @@
 	 <select id="commentView" parameterType="long" resultType="comment">
 		select * from comment_table where b_number=#{b_number}
  	</select>
+ 	<!-- 조회수증가 -->
+ 	<select id="viewAdd" parameterType="long" >
+		update board_table set b_hits=b_hits+1 where b_number=#{b_number}
+	</select>
  	
  	<select id="memberInfo" parameterType="String" resultType="member">
 		select * from member_table where m_id=#{m_id}

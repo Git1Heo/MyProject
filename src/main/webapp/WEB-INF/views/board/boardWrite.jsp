@@ -22,9 +22,45 @@
 
 	
 </head>
-<body style="background-color: whitesmoke;">
 
 
+<body class="container" style="background-color: whitesmoke;">
+
+<!-- 헤더 -->
+  <header >
+    <div  class="shadow p-3 mb-5 bg-body rounded opacity-75" id="headline">
+      <div>
+        <h4 class="text-center mt-2"><strong>게시판</strong></h4>
+      </div>
+      <div>
+      
+      <a href="/">
+      	<img alt="" src="/resources/upload/home.png" >
+      </a>
+  
+      <c:if test="${!empty sessionScope.loginID }">
+     	 <span class="ml-3">${sessionScope.loginID}님 환영합니다.</span>
+     </c:if> 
+     	 
+      <c:if test="${empty sessionScope.loginID }">
+        <button class="btn btn-outline-primary btn float-right" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Login</button>
+      </c:if>
+      
+      <c:if test="${!empty sessionScope.loginID }">
+        <a href="/logout"><button class="btn btn-outline-primary" style="float: right;">Logout </button></a> 
+      </c:if>
+      
+      <c:if test="${empty sessionScope.loginID }">
+        <a href="/signup" style="float: right;" class="m-2 " id="singin">회원가입</a>
+      </c:if>
+      
+       <c:if test="${!empty sessionScope.loginID }">
+        <a href="/mypage?m_id=${sessionScope.loginID}" style="float: right;" class="m-2 " >mypage</a> 
+       </c:if> 
+      </div>
+
+    </div>
+  </header>
 
 
 <div class="content-wrapper container">
@@ -93,6 +129,45 @@
           </ul>
         </footer>
       </div>
+      
+                    <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                  <body class="text-center">
+          
+                      <main class="form-signin">
+                        <form action="login" method="post">                         
+                          <h1 class="h3 mb-3 fw-normal">로그인</h1>
+                      
+                          <div class="form-floating">
+                            <input type="text" class="form-control" name="m_id" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                          </div>
+                          <div class="form-floating">
+                            <input type="password" class="form-control" name="m_password" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                          </div>                      
+                        
+                      </main>
+              </div>
+
+              <div class="modal-footer">
+                  <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                  </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+					
+            </div>
+          </div>
+        </div>
 
 <script>
 

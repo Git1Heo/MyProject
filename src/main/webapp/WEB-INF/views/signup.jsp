@@ -24,7 +24,7 @@
             font-size: large;
         }
         #ddd{
-            background-color: blanchedalmond;
+            background-color: rgb(250,250,250);
         }
     </style>
     
@@ -78,10 +78,22 @@
 		
 	}
 	
+	function signupSubmit(){
+		const id=document.getElementById("idoutput").innerText
+		const pw1=document.getElementById("pw1output").innerText
+		const pw2=document.getElementById("pw2output").innerText
+		const name=document.getElementById("nameoutput").innerText
+		const phone=document.getElementById("phone-check-result").innerText
+		if(id=="GOOD" && pw1=="GOOD" && pw2=="GOOD" && name=="GOOD" && phone=="GOOD")
+			signup_form.submit();	
+		else
+			alert("다시입력하세요");
+	}
+	
 	</script>
 
 </head>
-<body>
+<body style="background-color: whitesmoke;">
     <div class="container" id="ddd">
         <div class ="py-5 text-center" >
             <h2 >Checkout form</h2>
@@ -89,7 +101,7 @@
         </div>
         
         <div class="row" style="width: 100%">
-    		<form action="signup" method="POST" name="signup" enctype="multipart/form-data">
+    		<form action="signup" method="POST" name="signup" enctype="multipart/form-data" id="signup_form">
              <div style="width: 60%; float:none; margin:0 auto" >
                 <div class="input-group mb-3">
                     <h4 class="mb-2">아이디</h4>
@@ -135,15 +147,28 @@
                     <input type="text" name="m_phone" class="form-control" id="pn" onblur="pncheck()" placeholder="OOO-OOOO-OOO 형식으로 전화번호를 입력하세요" style="width: 100% ;">
                     <p id="phone-check-result"></p>
                 </div>	
-	
-                  <button class="btn btn btn-primary btn-round mb-4" style="width: 100%" id="endButton">회원가입</button> 
+						<!-- <button class="btn btn btn-primary btn-round mb-4" style="width: 100%" id="endButton" onclick="signup()">회원가입</button> -->
+					    <input type="button" value="회원가입"  class="btn btn btn-primary btn-round my-4 " style="width: 100%" id="endButton" onclick="signupSubmit()">
+    
              </div>
     		</form>
          </div>
 
 
     </div>
-    
-    값 알맞을때만 회원가입 되도록 자바스크립트
+      <div class="container" >
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="text-muted">&copy; 2021 HSW, Project</span>
+          </div>      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <span>My git address</span>
+            <li class="ms-3"><a class="text-muted" href="https://github.com/Git1Heo/MyProject"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg></a></li>
+          </ul>
+        </footer>
+      </div>
 </body>
 </html>

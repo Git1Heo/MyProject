@@ -68,6 +68,40 @@ public class IndexController {
 		}
 	}
 	
+	//로그인 처리
+	@RequestMapping(value="/board/login", method=RequestMethod.POST)
+	public  @ResponseBody String loginB(Model model,@ModelAttribute MemberDTO member) {		
+		MemberDTO result=ms.login(member);
+		model.addAttribute("member", result);
+		if(result == null)	{
+			String alert="<script>alert('Login Fail');location.href='/'</script>";
+			return alert; 
+		}
+		else {
+			session.setAttribute("loginID", member.getM_id());
+			session.setAttribute("loginPW", member.getM_password());
+			String alert="<script>alert('Login Success');location.href='/'</script>";
+			return alert;
+		}
+	}
+	
+	//로그인 처리
+	@RequestMapping(value="/personality/login", method=RequestMethod.POST)
+	public  @ResponseBody String loginP(Model model,@ModelAttribute MemberDTO member) {		
+		MemberDTO result=ms.login(member);
+		model.addAttribute("member", result);
+		if(result == null)	{
+			String alert="<script>alert('Login Fail');location.href='/'</script>";
+			return alert; 
+		}
+		else {
+			session.setAttribute("loginID", member.getM_id());
+			session.setAttribute("loginPW", member.getM_password());
+			String alert="<script>alert('Login Success');location.href='/'</script>";
+			return alert;
+		}
+	}
+	
 	//로그아웃 처리
 	@RequestMapping (value="/logout", method=RequestMethod.GET)
 	public String logout(HttpServletRequest request) {

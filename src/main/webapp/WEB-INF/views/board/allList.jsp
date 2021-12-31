@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<link href="${path}/resources/css/header.css" rel="stylesheet"/> 
 	<style>
 a:link {
   text-decoration: none;
@@ -29,10 +30,47 @@ a:active {
 	
 	</style>
 </head>
-<body  style="background-color: whitesmoke;">
-	<div  class="container" style="background-color: rgb(250, 250, 250);">
+<body  class="container" style="background-color: whitesmoke;">
+
+  <!-- 헤더 -->
+  <header >
+    <div  class="shadow p-3 mb-5 bg-body rounded opacity-75" id="headline">
+      <div>
+        <h4 class="text-center mt-2"><strong>게시판</strong></h4>
+      </div>
+      <div>
+      
+      <a href="/">
+      	<img alt="" src="/resources/upload/home.png" >
+      </a>
+  
+      <c:if test="${!empty sessionScope.loginID }">
+     	 <span class="ml-3">${sessionScope.loginID}님 환영합니다.</span>
+     </c:if> 
+     	 
+      <c:if test="${empty sessionScope.loginID }">
+        <button class="btn btn-outline-primary btn float-right" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Login</button>
+      </c:if>
+      
+      <c:if test="${!empty sessionScope.loginID }">
+        <a href="/logout"><button class="btn btn-outline-primary" style="float: right;">Logout </button></a> 
+      </c:if>
+      
+      <c:if test="${empty sessionScope.loginID }">
+        <a href="/signup" style="float: right;" class="m-2 " id="singin">회원가입</a>
+      </c:if>
+      
+       <c:if test="${!empty sessionScope.loginID }">
+        <a href="/mypage?m_id=${sessionScope.loginID}" style="float: right;" class="m-2 " >mypage</a> 
+       </c:if> 
+      </div>
+
+    </div>
+  </header>
+
+	<div  class="container" style="background-color: rgb(250, 250, 250);" >
 	  <c:if test="${!empty sessionScope.loginID }">
-     	 <a href="/board/boardWrite?m_id=${sessionScope.loginID }"> 글 작성</a>
+     	 <a class="text-end" href="/board/boardWrite?m_id=${sessionScope.loginID }"> 글 작성</a>
       </c:if>
 
 
@@ -40,7 +78,7 @@ a:active {
 		<tr>
         	<th style="width: 8%;">글 번호</th>
        		<th style="width: 5%;">프로필사진</th>
-       		<th style="width: 5%;">MBTI</th>
+       		<th style="width: 5%;">성격유형</th>
        		<th style="width: 10%;">작성자</th>
        		<th style="width: 50%;">제목</th>
        		<th>작성시간</th>
@@ -162,5 +200,45 @@ a:active {
           </ul>
         </footer>
       </div>
+      
+              <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                  <body class="text-center">
+          
+                      <main class="form-signin">
+                        <form action="login" method="post">                         
+                          <h1 class="h3 mb-3 fw-normal">로그인</h1>
+                      
+                          <div class="form-floating">
+                            <input type="text" class="form-control" name="m_id" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                          </div>
+                          <div class="form-floating">
+                            <input type="password" class="form-control" name="m_password" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                          </div>                      
+                        
+                      </main>
+              </div>
+
+              <div class="modal-footer">
+                  <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                  </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+					
+            </div>
+          </div>
+        </div>
+        
 </body>
 </html>

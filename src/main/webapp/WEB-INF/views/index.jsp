@@ -17,19 +17,19 @@
 /* 메인 */
 #maintab{
   height: 700px; 
-  background-color : blanchedalmond;
+
 }
 
 </style>
 
 </head>
-<body class="container" >
+<body class="container" style="background-color: whitesmoke;">
 
   <!-- 헤더 -->
   <header >
-    <div  class="shadow p-3 mb-5 bg-body rounded opacity-75" id="headline">
+    <div  class="shadow p-3 mb-5 bg-body rounded opacity-75" id="headline" >
       <div>
-        <h4 class="text-center mt-2"><strong>MBTI 게시판</strong></h4>
+        <h4 class="text-center mt-2"><strong>성격유형검사 게시판</strong></h4>
       </div>
       <div>
       
@@ -63,7 +63,7 @@
 
 
     <!-- 메인 구성 -->
-    <main id="maintab">
+    <main id="maintab" style="background-color: rgb(250, 250, 250);">
 
       <div> 
 

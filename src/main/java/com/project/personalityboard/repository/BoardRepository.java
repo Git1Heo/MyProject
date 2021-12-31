@@ -31,6 +31,7 @@ public class BoardRepository {
 	
 	// 게시글 상세
 	public BoardDTO boardView(long b_number) {
+		sql.update("Board.viewAdd",b_number);
 		return sql.selectOne("Board.boardView", b_number);
 	}
 	
